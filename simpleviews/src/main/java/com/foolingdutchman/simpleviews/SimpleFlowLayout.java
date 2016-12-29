@@ -216,7 +216,10 @@ public class SimpleFlowLayout extends ViewGroup {
             textView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onItemClickListener.onItemClick(v, mNames.get(position), position);
+                    if (onItemClickListener!=null) {
+                        onItemClickListener.onItemClick(v, mNames.get(position), position);
+                    }
+
                 }
             });
 //            this.addView(view, lp);
@@ -258,7 +261,7 @@ public class SimpleFlowLayout extends ViewGroup {
     }
 
 
-    public void setmNames(List<String> list) {
+    public void setTextList(List<String> list) {
         mNames = list;
         initChildViews();
     }

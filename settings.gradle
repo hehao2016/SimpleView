@@ -1,1 +1,1 @@
-include ':app', ':simpleviews'
+include ':sample', ':simpleviews'
